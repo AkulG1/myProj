@@ -3,7 +3,6 @@ var app = express();
 var url = require('url');
 var port = process.env.PORT || 3000;
 var bodyParser = require('body-parser');
-var passport = require('passport');
 var flash = require('connect-flash');
 var morgan = require('morgan');
 var cookieParser = require('cookie-parser');
@@ -23,7 +22,6 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 
-require('./config/passport')(passport); // pass passport for configuration
 
 app.use('/assets', express.static(__dirname + '/public'));
 
